@@ -1,0 +1,37 @@
+<form [formGroup]="registrationForm" class="form">
+    <mat-form-field class="form-input">
+        <mat-label>Name</mat-label>
+        <input
+            type="text"
+            formControlName="name"
+            matInput
+        />
+    </mat-form-field>
+    <mat-form-field class="form-input">
+        <mat-label>Date of birth</mat-label>
+        <input
+            type="date"
+            formControlName="dob"
+            matInput
+            max="{{maxDate | date:'yyyy-MM-dd'}}"
+            min="{{minDate | date:'yyyy-MM-dd'}}"
+            (input)="onInputChange($event)"
+        />
+    </mat-form-field>
+    <mat-form-field class="form-input">
+        <mat-label>Password</mat-label>
+        <input
+            type="password"
+            formControlName="password"
+            matInput
+        />
+    </mat-form-field>
+    <mat-form-field class="form-input">
+        <mat-label>Confirm Password</mat-label>
+        <input
+            type="password"
+            formControlName="confirmPassword"
+            matInput
+        />
+    </mat-form-field>
+</form>
